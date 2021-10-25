@@ -1,0 +1,47 @@
+.wishlist {
+    background-color: #ebeb10;
+    color: #000;
+    font-family: 'Permanent Marker', Helvetica, Arial, sans-serif;
+    font-size: 140%;
+    margin: 0 auto;
+    padding: 5%;
+    position: relative;
+    width: 80%;
+}
+
+.wishlist h2 {
+    margin: 0;
+}
+
+.wishlist h2::before {
+    content: '-';
+    margin: 0;
+    display: block;
+    position: absolute;
+    transform: scale(7, 1) rotate(-5deg);
+    color: #000;
+    left: 25%;
+    top: 8%;
+}
+
+.wishlist h2::after {
+    content: '-';
+    margin: 0;
+    display: block;
+    position: absolute;
+    transform: scale(-7, 1) rotate(5deg);
+    color: #000;
+    left: 21%;
+    top: 5.5%;
+}
+
+.wishlist ul {
+    list-style-type: '-';
+    margin: 0;
+    padding: 0 0 0 0.3em;
+}
+
+.wishlist li {
+    margin: 0;
+    padding: 0 0 0 0.3em;
+}

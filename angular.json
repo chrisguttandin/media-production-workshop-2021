@@ -1,0 +1,179 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "defaultProject": "media-production-workshop-2021",
+    "newProjectRoot": "projects",
+    "projects": {
+        "media-production-workshop-2021": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "configurations": {
+                        "development": {
+                            "buildOptimizer": false,
+                            "extractLicenses": false,
+                            "namedChunks": true,
+                            "optimization": false,
+                            "sourceMap": true,
+                            "vendorChunk": true
+                        },
+                        "production": {
+                            "budgets": [
+                                {
+                                    "baseline": "500kb",
+                                    "maximumError": "500kb",
+                                    "type": "initial"
+                                },
+                                {
+                                    "maximumError": "10kb",
+                                    "maximumWarning": "6kb",
+                                    "type": "anyComponentStyle"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "sourceMap": {
+                                "hidden": true,
+                                "scripts": true,
+                                "styles": false
+                            }
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "assets": ["src/assets"],
+                        "i18nMissingTranslation": "error",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "ngswConfigPath": "src/ngsw-config.json",
+                        "outputPath": "build/media-production-workshop-2021",
+                        "polyfills": "src/polyfills.ts",
+                        "scripts": ["hammerjs/hammer.js"],
+                        "serviceWorker": true,
+                        "styles": ["src/styles/styles.css"],
+                        "tsConfig": "src/tsconfig.json"
+                    }
+                },
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "media-production-workshop-2021:serve:production"
+                        }
+                    },
+                    "options": {
+                        "devServerTarget": "media-production-workshop-2021:serve",
+                        "protractorConfig": "config/protractor/e2e.js"
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "media-production-workshop-2021:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "configurations": {
+                        "test": {
+                            "eslintConfig": "config/eslint/test.json",
+                            "lintFilePatterns": ["test/**/*.ts", "test/**/*.html"]
+                        }
+                    },
+                    "options": {
+                        "eslintConfig": "config/eslint/src.json",
+                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "media-production-workshop-2021:build:development"
+                        },
+                        "production": {
+                            "browserTarget": "media-production-workshop-2021:build:production"
+                        }
+                    },
+                    "defaultConfiguration": "development",
+                    "options": {
+                        "browserTarget": "media-production-workshop-2021:build",
+                        "port": 6633
+                    }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "media",
+                            "sourceMap": false
+                        }
+                    },
+                    "options": {
+                        "main": "src/main.server.ts",
+                        "outputPath": "build/media-production-workshop-2021-server",
+                        "tsConfig": "src/tsconfig.server.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "assets": ["src/assets"],
+                        "karmaConfig": "config/karma/config.js",
+                        "main": "config/karma/test.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "scripts": ["hammerjs/hammer.js"],
+                        "styles": ["src/styles/styles.css"],
+                        "tsConfig": "test/unit/tsconfig.json"
+                    }
+                }
+            },
+            "prefix": "mpw",
+            "projectType": "application",
+            "root": "",
+            "schematics": {},
+            "sourceRoot": "src"
+        }
+    },
+    "schematics": {
+        "@schematics/angular:class": {
+            "skipTests": true
+        },
+        "@schematics/angular:component": {
+            "changeDetection": "OnPush",
+            "inlineStyle": false,
+            "inlineTemplate": false,
+            "prefix": "mpw",
+            "skipTests": true,
+            "style": "css"
+        },
+        "@schematics/angular:directive": {
+            "prefix": "mpw",
+            "skipTests": true
+        },
+        "@schematics/angular:interface": {
+            "prefix": "I"
+        },
+        "@schematics/angular:module": {
+            "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+            "skipTests": true
+        },
+        "@schematics/angular:service": {
+            "skipTests": true
+        }
+    },
+    "version": 1
+}
