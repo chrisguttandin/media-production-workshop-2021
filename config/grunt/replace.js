@@ -52,11 +52,11 @@ module.exports = (grunt) => {
             options: {
                 patterns: [
                     {
-                        match: /(?<character>[a-z]+)\.u=e=>e\+"(?:-es(?:2015|5))?\.[\da-f]{20}.js"/g,
+                        match: /(?<character>[a-z]+)\.u=e=>e\+"(?:-es(?:2015|5))?\.[\da-f]{16}.js"/g,
                         replacement: (match, character) => match.replace(/[a-z]+.u=e=>e/g, `${character}.u=e=>"scripts/"+e`)
                     },
                     {
-                        match: /(?<character>[a-z]+)\.u=e=>(?<prefix>e|\(\d+===e\?"common":e\))\+"(?:-es(?:2015|5))?\."\+{(?:\d+:"[\da-f]{20}",?)+}/g,
+                        match: /(?<character>[a-z]+)\.u=e=>(?<prefix>e|\(\d+===e\?"common":e\))\+"(?:-es(?:2015|5))?\."\+{(?:\d+:"[\da-f]{16}",?)+}/g,
                         replacement: (match, character, prefix) =>
                             match.replace(/[a-z]+.u=e=>(?:e|\(\d+===e\?"common":e\))/g, `${character}.u=e=>"scripts/"+${prefix}`)
                     },
@@ -205,8 +205,8 @@ module.exports = (grunt) => {
             options: {
                 patterns: [
                     {
-                        match: /<script\ssrc="(?<filename>runtime(?:-es(?:2015|5))?.[\da-z]*\.js)"\scrossorigin="anonymous"(?<moduleAttribute>\s(?:nomodule|type="module"))?\sdefer(?:="")?\sintegrity="sha384-[\d+/A-Za-z]+=*"><\/script>/g,
-                        replacement: (match, filename, moduleAttribute) => {
+                        match: /<script\ssrc="(?<filename>runtime(?:-es(?:2015|5))?.[\da-z]*\.js)"(?<moduleAttribute>\s(?:nomodule|type="module"))?\scrossorigin="anonymous"\sintegrity="sha384-[\d+/A-Za-z]+=*"><\/script>/g,
+                        replacement: (_, filename, moduleAttribute) => {
                             if (moduleAttribute === undefined) {
                                 return `<script>${fs.readFileSync(`build/media-production-workshop-2021/${filename}`)}</script>`; // eslint-disable-line node/no-sync
                             }
@@ -227,8 +227,8 @@ module.exports = (grunt) => {
             options: {
                 patterns: [
                     {
-                        match: /<script\ssrc="(?<filename>[\da-z-]+\.[\da-z]+\.js)"\scrossorigin="anonymous"(?<moduleAttribute>\s(?:nomodule|type="module"))?\sdefer(?:="")?\sintegrity="(?<initialHash>sha384-[\d+/A-Za-z]+=*)"><\/script>/g,
-                        replacement: (match, filename, moduleAttribute, initialHash) => {
+                        match: /<script\ssrc="(?<filename>[\da-z-]+\.[\da-z]+\.js)"(?<moduleAttribute>\s(?:nomodule|type="module"))?(?<deferAttribute>\sdefer)?\scrossorigin="anonymous"\sintegrity="(?<initialHash>sha384-[\d+/A-Za-z]+=*)"><\/script>/g,
+                        replacement: (_, filename, moduleAttribute, deferAttribute, initialHash) => {
                             const updatedHash = /main(?:-es(?:2015|5))?\.[\da-z]+\.js/.test(filename)
                                 ? `sha384-${computeHashOfFile(
                                       `build/media-production-workshop-2021/scripts/${filename}`,
@@ -237,11 +237,19 @@ module.exports = (grunt) => {
                                   )}`
                                 : initialHash;
 
-                            if (moduleAttribute === undefined) {
-                                return `<script src="scripts/${filename}" crossorigin="anonymous" defer integrity="${updatedHash}"></script>`;
+                            if (deferAttribute === undefined) {
+                                if (moduleAttribute === undefined) {
+                                    return `<script src="scripts/${filename}" crossorigin="anonymous" integrity="${updatedHash}"></script>`;
+                                }
+
+                                return `<script src="scripts/${filename}"${moduleAttribute} crossorigin="anonymous" integrity="${updatedHash}"></script>`;
                             }
 
-                            return `<script src="scripts/${filename}" crossorigin="anonymous"${moduleAttribute} defer integrity="${updatedHash}"></script>`;
+                            if (moduleAttribute === undefined) {
+                                return `<script src="scripts/${filename}"${deferAttribute} crossorigin="anonymous" integrity="${updatedHash}"></script>`;
+                            }
+
+                            return `<script src="scripts/${filename}"${moduleAttribute}${deferAttribute} crossorigin="anonymous" integrity="${updatedHash}"></script>`;
                         }
                     }
                 ]
