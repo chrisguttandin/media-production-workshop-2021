@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1636292615764,
+  "timestamp": 1638553505659,
   "index": "/media-production-workshop-2021/index.html",
   "assetGroups": [
     {
@@ -11,12 +11,12 @@
         "ignoreVary": true
       },
       "urls": [
-        "/media-production-workshop-2021/scripts/203.5bf82622aa45983d5845.js",
+        "/media-production-workshop-2021/scripts/917.3369d1ba53bc26bb.js",
         "/media-production-workshop-2021/index.html",
-        "/media-production-workshop-2021/scripts/main.02db62ed8a52ddd38f73.js",
-        "/media-production-workshop-2021/scripts/polyfills.a02c3a75a076a3987e03.js",
-        "/media-production-workshop-2021/scripts/scripts.1dade9dd63b52cc23955.js",
-        "/media-production-workshop-2021/styles/styles.c6484c0000fc06597b8f.css"
+        "/media-production-workshop-2021/scripts/main.8591af26373b1126.js",
+        "/media-production-workshop-2021/scripts/polyfills.de7588ab4486f4af.js",
+        "/media-production-workshop-2021/scripts/scripts.dfad97d68e603256.js",
+        "/media-production-workshop-2021/styles/styles.b8e8361f2cfc33d5.css"
       ],
       "patterns": []
     },
@@ -46,12 +46,12 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/media-production-workshop-2021/scripts/203.5bf82622aa45983d5845.js": "6a97aec3dc0366d040e101ff5d29059b79a164e7",
-    "/media-production-workshop-2021/index.html": "d27d60038525db9c72d8dc06f8cc9481b7b6a5a1",
-    "/media-production-workshop-2021/scripts/main.02db62ed8a52ddd38f73.js": "a67578668f5bfcdc58a364cd250e5169e6e5c0c5",
-    "/media-production-workshop-2021/scripts/polyfills.a02c3a75a076a3987e03.js": "1569fc22336708c169ecc9b72e787502aa23e49e",
-    "/media-production-workshop-2021/scripts/scripts.1dade9dd63b52cc23955.js": "ef3c8da1c4136a8a39d9332a35234ed4564cd538",
-    "/media-production-workshop-2021/styles/styles.c6484c0000fc06597b8f.css": "5901491bc42f59c6a25d6ccba4e061ae0ec288b1"
+    "/media-production-workshop-2021/scripts/917.3369d1ba53bc26bb.js": "eff687ab3553ad2bbf4affca6f0d1dd72b835f03",
+    "/media-production-workshop-2021/index.html": "105794b0c08039cc6869650681f13f6c7cefe30b",
+    "/media-production-workshop-2021/scripts/main.8591af26373b1126.js": "d37e21cf09e69d48080a412a6e7066c62dc2e1ab",
+    "/media-production-workshop-2021/scripts/polyfills.de7588ab4486f4af.js": "3e050caa1dd0f788df2f09b0cba4f687fca5d66c",
+    "/media-production-workshop-2021/scripts/scripts.dfad97d68e603256.js": "554d625466cd46abebafa3b59fdf39cf0e6730ed",
+    "/media-production-workshop-2021/styles/styles.b8e8361f2cfc33d5.css": "560609e9eaad453e7d90a65a8e2977b25c7388bf"
   },
   "navigationUrls": [
     {
