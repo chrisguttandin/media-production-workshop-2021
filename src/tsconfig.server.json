@@ -1,7 +1,6 @@
 {
     "angularCompilerOptions": {
-        "entryModule": "app/app.server.module#AppServerModule",
-        "fullTemplateTypeCheck": true
+        "entryModule": "app/app.server.module#AppServerModule"
     },
     "compilerOptions": {
         "baseUrl": "./",
