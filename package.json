@@ -70,7 +70,7 @@
         "@hint/parser-manifest": "^2.3.16",
         "@playwright/test": "^1.28.1",
         "@types/jasmine": "~4.0.3",
-        "angular-prerender": "^11.0.2",
+        "angular-prerender": "^11.0.3",
         "axe-core": "^4.5.2",
         "bundle-buddy": "^0.2.2",
         "commitizen": "^4.2.5",
