@@ -19,7 +19,7 @@
         "@angular/service-worker": "^15.1.3",
         "hammerjs": "^2.0.8",
         "rxjs": "~7.8.0",
-        "subscribable-things": "^2.1.12",
+        "subscribable-things": "^2.1.13",
         "tslib": "^2.4.1",
         "zone.js": "~0.12.0"
     },
