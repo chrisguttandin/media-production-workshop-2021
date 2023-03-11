@@ -15,11 +15,6 @@ body {
     width: 100%;
 }
 
-body h1:first-child,
-body h2 {
-    margin-top: 0;
-}
-
 @media (min-aspect-ratio: 4/3) {
     body {
         font-size: 10.666vh;
@@ -47,6 +42,11 @@ h1 {
 h2 {
     font-size: 80%;
     letter-spacing: -0.02em;
+}
+
+body h1:first-child,
+body h2 {
+    margin-top: 0;
 }
 
 ul {
