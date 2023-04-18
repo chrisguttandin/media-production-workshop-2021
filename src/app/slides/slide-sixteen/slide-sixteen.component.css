@@ -14,25 +14,25 @@
 }
 
 .wishlist h2::before {
-    content: '-';
-    margin: 0;
-    display: block;
-    position: absolute;
-    transform: scale(7, 1) rotate(-5deg);
     color: #000;
+    content: '-';
+    display: block;
     left: 25%;
+    margin: 0;
+    position: absolute;
     top: 8%;
+    transform: scale(7, 1) rotate(-5deg);
 }
 
 .wishlist h2::after {
-    content: '-';
-    margin: 0;
-    display: block;
-    position: absolute;
-    transform: scale(-7, 1) rotate(5deg);
     color: #000;
+    content: '-';
+    display: block;
     left: 21%;
+    margin: 0;
+    position: absolute;
     top: 5.5%;
+    transform: scale(-7, 1) rotate(5deg);
 }
 
 .wishlist ul {
