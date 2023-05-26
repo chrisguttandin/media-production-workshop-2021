@@ -1,3 +1,9 @@
+@use '@fontsource/montserrat/scss/mixins' as montserrat;
+@use '@fontsource/permanent-marker/scss/mixins' as permanentMarker;
+
+@include montserrat.faces($subsets: latin latin-ext, $weights: 400);
+@include permanentMarker.faces($subsets: latin latin-ext, $weights: 400);
+
 html {
     height: 100%;
     margin: 0;
