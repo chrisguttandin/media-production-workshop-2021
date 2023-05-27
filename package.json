@@ -21,7 +21,7 @@
         "@fontsource/permanent-marker": "^5.0.1",
         "hammerjs": "^2.0.8",
         "rxjs": "~7.8.1",
-        "subscribable-things": "^2.1.16",
+        "subscribable-things": "^2.1.18",
         "tslib": "^2.5.2",
         "zone.js": "~0.12.0"
     },
