@@ -60,7 +60,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "media-production-workshop-2021:build"
+                        "buildTarget": "media-production-workshop-2021:build"
                     }
                 },
                 "lint": {
@@ -80,10 +80,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "development": {
-                            "browserTarget": "media-production-workshop-2021:build:development"
+                            "buildTarget": "media-production-workshop-2021:build:development"
                         },
                         "production": {
-                            "browserTarget": "media-production-workshop-2021:build:production"
+                            "buildTarget": "media-production-workshop-2021:build:production"
                         }
                     },
                     "defaultConfiguration": "development",
