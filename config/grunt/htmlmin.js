@@ -2,8 +2,8 @@ module.exports = {
     default: {
         files: [
             {
-                cwd: 'build/media-production-workshop-2021',
-                dest: 'build/media-production-workshop-2021',
+                cwd: 'build/media-production-workshop-2021/browser',
+                dest: 'build/media-production-workshop-2021/browser',
                 expand: true,
                 src: ['**/*.html']
             }
