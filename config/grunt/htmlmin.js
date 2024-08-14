@@ -5,7 +5,7 @@ module.exports = {
                 cwd: 'build/media-production-workshop-2021/browser',
                 dest: 'build/media-production-workshop-2021/browser',
                 expand: true,
-                src: ['**/*.html']
+                src: ['**/404.html']
             }
         ],
         options: {

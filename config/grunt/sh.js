@@ -31,11 +31,6 @@ module.exports = (grunt) => {
         'monitor': {
             cmd: 'npx ng serve'
         },
-        'prerender': {
-            cmd: `npx angular-prerender \
-                --preserve-index-html \
-                --target media-production-workshop-2021:build`
-        },
         'preview': {
             cmd: 'npx ng serve --configuration production'
         },
