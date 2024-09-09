@@ -117,7 +117,7 @@
         "url": "https://github.com/chrisguttandin/media-production-workshop-2021.git"
     },
     "scripts": {
-        "prepare": "husky install",
+        "prepare": "husky",
         "test": "grunt lint && grunt test"
     },
     "version": "1.0.55"
