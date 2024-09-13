@@ -9,7 +9,8 @@ export const slideAnimation = animation([
             position: 'fixed',
             top: '{{ top }}',
             width: '{{ width }}'
-        })
+        }),
+        { optional: true }
     ),
     group([
         query(
