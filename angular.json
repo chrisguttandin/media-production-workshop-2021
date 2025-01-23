@@ -49,9 +49,7 @@
                         "index": "src/index.html",
                         "outputPath": "build/media-production-workshop-2021",
                         "polyfills": ["zone.js"],
-                        "prerender": {
-                            "routesFile": "src/routes.txt"
-                        },
+                        "prerender": true,
                         "scripts": ["hammerjs/hammer.js"],
                         "server": "src/main.server.ts",
                         "serviceWorker": "src/ngsw-config.json",
