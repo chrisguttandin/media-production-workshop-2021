@@ -1,7 +1,12 @@
 @use '@fontsource/montserrat/scss/mixins' as montserrat;
 @use '@fontsource/permanent-marker/scss/mixins' as permanentMarker;
 
-@include montserrat.faces($directory: '@fontsource/montserrat/files/', $subsets: latin latin-ext, $weights: 400);
+@include montserrat.faces(
+    $directory: '@fontsource/montserrat/files/',
+    $styles: italic normal,
+    $subsets: latin latin-ext,
+    $weights: 400 500
+);
 @include permanentMarker.faces($directory: '@fontsource/permanent-marker/files/', $subsets: latin latin-ext, $weights: 400);
 
 html {
@@ -43,11 +48,17 @@ p {
 
 h1 {
     font-size: 160%;
+    font-weight: 500;
 }
 
 h2 {
     font-size: 80%;
+    font-weight: 500;
     letter-spacing: -0.02em;
+}
+
+h3 {
+    font-weight: 500;
 }
 
 body h1:first-child,
