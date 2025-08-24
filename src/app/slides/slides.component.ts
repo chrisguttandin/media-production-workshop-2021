@@ -6,7 +6,7 @@ import { mediaQueryMatch } from 'subscribable-things';
 import { WindowService } from '../window.service';
 import { slideAnimation } from './slide.animation';
 
-const EXCLUDED_FORWARD_TRANSITIONS = [0, 4, 6, 9, 19, 20, 24];
+const EXCLUDED_FORWARD_TRANSITIONS = [4, 6, 9, 19, 20, 24];
 const NO_TRANSITION_PARAMS = { blur: '0', duration: '0s', enterTransform: 'none', leaveTransform: 'none', top: 'auto', width: 'auto' };
 
 @Component({
