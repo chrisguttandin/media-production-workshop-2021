@@ -41,14 +41,16 @@ export default defineConfig({
     testDir: '../../test',
     testMatch: /(?:e2e|regression)\/(?!.*\.po\.ts$).*\.ts$/,
     use: {
-        baseURL: env.IS_SMOKE_TEST === 'true' ? 'https://chrisguttandin.github.io/media-production-workshop-2021/' : 'http://localhost:6633',
+        baseURL:
+            env.IS_SMOKE_TEST === 'true' ? 'https://chrisguttandin.github.io/media-production-workshop-2021/' : 'http://localhost:6633',
         trace: 'on-first-retry'
     },
-    webServer: env.IS_SMOKE_TEST === 'true'
-        ? undefined
-        : {
-              command: 'npm run monitor',
-              port: 6633
-          },
+    webServer:
+        env.IS_SMOKE_TEST === 'true'
+            ? undefined
+            : {
+                  command: 'npm run monitor',
+                  port: 6633
+              },
     workers: env.CI === 'true' ? 1 : undefined
 });
