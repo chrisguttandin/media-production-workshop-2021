@@ -107,6 +107,7 @@
     "license": "MIT",
     "main": "src/index.html",
     "name": "media-production-workshop-2021",
+    "packageManager": "npm@12",
     "private": true,
     "repository": {
         "type": "git",
